@@ -1,0 +1,54 @@
+/* General Reset and Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom right, #c8ebeb, #b0e0e6);
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+  }
+  
+  .quiz-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+  }
+  
+  /* Background Image */
+  .background img {
+    display: none; /* Optional: Hide background image if not needed */
+  }
+
+  /* Form Styling */
+form input {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 14px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  /* Buttons */
+  .btn,
+  .restart-btn {
+    background-color: #38b6b6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
