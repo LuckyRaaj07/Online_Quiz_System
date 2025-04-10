@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Quiz System</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
+  <div class="background">
+    <img src="background.jpg" alt="Background Image"/>
+  </div>
+
+  <div class="quiz-container">
+    <h1>Let's Start the Quiz!</h1>
+
+    <!-- Registration Form -->
+    <form id="user-info">
+      <input type="text" id="name" placeholder="Enter your name" required />
+      <input type="text" id="regno" placeholder="Registration number" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="contact" placeholder="Contact number" required />
+      <button type="button" class="btn" onclick="goToTopicSelection()">Next</button>
+    </form>
+
+    <!-- Topic Selection -->
+    <div id="topic-selection" class="hidden">
+      <h2>Select Quiz Topic</h2>
+      <select id="topic">
+        <option value="">--Select Topic--</option>
+        <option value="os">Operating System</option>
+        <option value="dbms">DBMS</option>
+        <option value="cn">Computer Networks</option>
+        <option value="prog">Basic Programming</option>
+        <option value="oops">OOPs Concepts</option>
+      </select>
+      <button class="btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div id="quiz" class="hidden">
+      <div id="question-container"></div>
+      <div id="options-container"></div>
+      <button class="btn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Result Display -->
+    <div id="score" class="hidden"></div>
+    <canvas id="donutChart" class="hidden"></canvas>
+    <div id="rank-display" class="hidden"></div>
+    <button id="restartBtn" class="restart-btn hidden" onclick="restartQuiz()">Restart Quiz</button>
+
+    <!-- Result History Table -->
+    <div id="result-history">
+      <h2>Result History</h2>
+      <table id="results-table"></table>
+    </div>
+
+    <!-- Ranking Table -->
+    <div id="ranking-section">
+      <h2>Ranking</h2>
+      <table id="ranking-table"></table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
