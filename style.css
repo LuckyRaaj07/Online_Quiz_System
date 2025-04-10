@@ -120,3 +120,50 @@ form input {
   font-size: 14px;
   table-layout: fixed;
 }
+
+#results-table th,
+#results-table td,
+#ranking-table th,
+#ranking-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#results-table th,
+#ranking-table th {
+  background-color: #38b6b6;
+  color: white;
+  font-weight: bold;
+}
+
+#results-table td:last-child {
+  width: 90px;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Section Titles */
+#result-history h2,
+#ranking-section h2 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
