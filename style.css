@@ -52,3 +52,71 @@ form input {
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+  .btn:hover,
+.restart-btn:hover {
+  background-color: #2da2a2;
+}
+
+/* Question and Options */
+#question-container h2 {
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  width: 80%;
+  border: 2px solid #38b6b6;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #38b6b6;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Score Text */
+#score {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Donut Chart */
+#donutChart {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+/* Ranking Display */
+#rank-display {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Table Wrapper for Responsive */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Result & Ranking Tables */
+#results-table,
+#ranking-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
