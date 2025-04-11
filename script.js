@@ -117,3 +117,34 @@ function nextQuestion() {
     endQuiz();
   }
 }
+
+function endQuiz() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("score").classList.remove("hidden");
+  document.getElementById("restartBtn").classList.remove("hidden");
+  document.getElementById("donutChart").classList.remove("hidden");
+  document.getElementById("rank-display").classList.remove("hidden");
+
+  document.getElementById("score").textContent = `${score}/${quizData[selectedTopic].length}`;
+
+  const correct = score;
+  const incorrect = quizData[selectedTopic].length - score;
+  const ctx = document.getElementById("donutChart").getContext("2d");
+  new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["Correct", "Incorrect"],
+      datasets: [{
+        data: [correct, incorrect],
+        backgroundColor: ["#4CAF50", "#f44336"],
+        hoverOffset: 10
+      }]
+    }
+  })
+
+  const userRecord = { ...userData, score };
+  users.push(userRecord);
+  localStorage.setItem("quizUsers", JSON.stringify(users));
+  renderResults();
+  renderRanking(userRecord);
+}
