@@ -48,7 +48,15 @@ const quizData = {
   ],
   oops: [
     { question: "OOP stands for?", options: ["Object-Oriented Programming", "Optical Output Programming", "Object Operated Program", "None"], answer: "Object-Oriented Programming" },
-    { question: "Which is not a pillar of OOP?", options: ["Encapsulation", "Inheritance", "Compilation", "Polymorphism"], answer: "Compilation" }
+    { question: "Which is not a pillar of OOP?", options: ["Encapsulation", "Inheritance", "Compilation", "Polymorphism"], answer: "Compilation" },
+    { question: "What is the purpose of a constructor in a class?", options: ["To free resources used by the object", "To initialize objects of the class", "To declare member functions", "To create classes dynamically"], answer: "To initialize objects of the class" },
+    { question: "Which access specifier makes members accessible only within the same class?", options: ["Public", "Protected", "Private", "Internal"], answer: "Private" },
+    { question: "Function overloading is an example of:", options: ["Runtime polymorphism", "Compile-time polymorphism", "Inheritance", "Encapsulation"], answer: "Compile-time polymorphism" },
+    { question: "Which of the following can be used to implement abstraction in OOP?", options: ["Classes and Objects", "Constructors", "Interfaces and Abstract Classes", "Destructors"], answer: "Interfaces and Abstract Classes" },
+    { question: "In which situation would you use virtual functions?", options: ["To increase the speed of execution", "To overload a method", "To achieve dynamic dispatch in inheritance", "To prevent method overriding"], answer: "To achieve dynamic dispatch in inheritance" },
+    { question: "What will happen if a class contains only private constructors?", options: ["It cannot be instantiated outside the class", "It can be instantiated anywhere", "It can only be inherited", "It is considered abstract"], answer: "It cannot be instantiated outside the class" },
+    { question: "What is the output of calling a pure virtual function of an abstract class without overriding it in a derived class?", options: ["It returns a default value", "Compilation error", "Runtime error", "Segmentation fault"], answer: "Compilation error" },
+    { question: "What does the Liskov Substitution Principle state?", options: ["Derived classes must override all methods of the base class", "Derived class objects must be replaceable for base class objects without affecting correctness", "Base classes should inherit from derived classes", "Subclasses should not access private members of the base class"], answer: "Derived class objects must be replaceable for base class objects without affecting correctness" }
   ]
 };
 
@@ -140,7 +148,7 @@ function endQuiz() {
         hoverOffset: 10
       }]
     }
-  })
+  });
 
   const userRecord = { ...userData, score };
   users.push(userRecord);
