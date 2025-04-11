@@ -8,15 +8,39 @@ let users = JSON.parse(localStorage.getItem("quizUsers")) || [];
 const quizData = {
   os: [
     { question: "What does OS stand for?", options: ["Operating System", "Open Software", "Output System", "Online Software"], answer: "Operating System" },
-    { question: "The two types of semaphores are", options: ["Windows", "Linux", "Oracle", "MacOS"], answer: "Oracle" }
+    { question: "Which of the following page replacement algorithms suffers from Belady's anomaly?", options: ["LRU", "Optimal", "FIFO", "LFU"], answer: "FIFO" },
+    { question: "In a system using segmentation, which of the following is not a part of a segment descriptor?", options: ["Segment number", "Base", "Limit", "Offset"], answer: "Offset" },
+    { question: "Which of the following is a non-preemptive scheduling algorithm?", options: ["Round Robin", "Shortest Job First (SJF)", "Multilevel Queue", "Priority Scheduling"], answer: "Shortest Job First (SJF)" },
+    { question: "Which of the following conditions is not necessary for deadlock to occur?", options: ["Mutual exclusion", "Hold and wait", "Preemption", "Circular wait"], answer: "Preemption" },
+    { question: "In the context of I/O operations, what does “spooling” stand for?", options: ["Special polling of input/output layers", "Simultaneous Peripheral Operations On-Line", "Sequential Processing of Online Output List", "Serial Processing of Online Instructions"], answer: "Simultaneous Peripheral Operations On-Line" },
+    { question: "Which of the following algorithms can lead to starvation?", options: ["First-Come, First-Served", "Round Robin", "Priority Scheduling", "Multilevel Feedback Queue with aging"], answer: "Priority Scheduling" },
+    { question: "Which of the following statements about demand paging is FALSE?", options: ["It brings a page into memory only when it is needed", "It increases the degree of multiprogramming", "It reduces the effective memory access time", "It can cause thrashing if not properly managed"], answer: "It reduces the effective memory access time" },
+    { question: "Which of the following is true regarding thrashing?", options: ["It is a condition where the CPU utilization increases due to more I/O operations", "It is caused when the system spends more time swapping pages than executing processes", "It occurs when all processes are in the ready queue", "It happens due to the large size of RAM"], answer: "It is caused when the system spends more time swapping pages than executing processes" },
+    { question: "In Banker's algorithm, what is the main factor that determines whether a resource request can be granted?", options: ["Available resources", "Maximum need", "Total processes in system", "Safe state after allocation"], answer: "Safe state after allocation" }
   ],
   dbms: [
     { question: "What is DBMS?", options: ["Data Base Management System", "Digital Base Map Structure", "Data Block Mapping Service", "None"], answer: "Data Base Management System" },
-    { question: "Which of these is a SQL command?", options: ["GET", "SELECT", "FETCH", "PULL"], answer: "SELECT" }
+    { question: "Which of these is a SQL command?", options: ["GET", "SELECT", "FETCH", "PULL"], answer: "SELECT" },
+    { question: "Which of the following is a valid property of a transaction in the context of ACID properties?", options: ["Atomicity - All or nothing", "Consistency - Partial data changes allowed", "Isolation - Transactions must run sequentially", "Durability - Data lost on crash"], answer: "Atomicity - All or nothing" },
+    { question: "In SQL, which of the following operations causes a Cartesian product?", options: ["INNER JOIN", "CROSS JOIN", "LEFT JOIN", "RIGHT JOIN"], answer: "CROSS JOIN" },
+    { question: "Which of the following is NOT a valid normal form?", options: ["1NF", "2NF", "6NF", "5NF"], answer: "6NF" },
+    { question: "Which type of index is best suited for range queries?", options: ["Hash Index", "B+ Tree Index", "Bitmap Index", "Clustered Index"], answer: "B+ Tree Index" },
+    { question: "Which of the following relational algebra operations is not a set operation?", options: ["Union", "Intersection", "Difference", "Selection"], answer: "Selection" },
+    { question: "In the context of transaction schedules, a schedule is conflict serializable if:", options: ["It contains no conflicting operations", "It is equivalent to some serial schedule", "It is free from cascading aborts", "It has no deadlocks"], answer: "It is equivalent to some serial schedule" },
+    { question: "The anomaly that occurs when deleting data causes unintended loss of additional data is known as:", options: ["Insertion anomaly", "Deletion anomaly", "Update anomaly", "Projection anomaly"], answer: "Deletion anomaly" },
+    { question: "Which SQL clause is used to restrict the number of rows returned by a query in most RDBMS?", options: ["WHERE", "HAVING", "GROUP BY", "LIMIT"], answer: "LIMIT" }
   ],
   cn: [
     { question: "Which layer in OSI model handles routing?", options: ["Transport", "Network", "Data Link", "Application"], answer: "Network" },
-    { question: "Which device connects networks?", options: ["Switch", "Router", "Modem", "Repeater"], answer: "Router" }
+    { question: "Which device connects networks?", options: ["Switch", "Router", "Modem", "Repeater"], answer: "Router" },
+    { question: "Which layer of the OSI model is responsible for end-to-end delivery of data?", options: ["Network Layer", "Transport Layer", "Data Link Layer", "Session Layer"], answer: "Transport Layer" },
+    { question: "Which of the following protocols is used to assign IP addresses dynamically?", options: ["DNS", "DHCP", "ARP", "ICMP"], answer: "DHCP" },
+    { question: "In which addressing mode is the destination IP address translated to a different address by a router or firewall?", options: ["Static Routing", "NAT", "DHCP", "Subnetting"], answer: "NAT" },
+    { question: "What is the maximum number of hosts that can be assigned in a Class C network?", options: ["126", "256", "1024", "254"], answer: "254" },
+    { question: "Which command is used to test the reachability of a host on an IP network?", options: ["tracert", "ping", "netstat", "ipconfig"], answer: "ping" },
+    { question: "Which of the following routing algorithms can suffer from the count-to-infinity problem?", options: ["Link-State Routing", "Distance Vector Routing", "Path Vector Routing", "Hybrid Routing"], answer: "Distance Vector Routing" },
+    { question: "Which protocol does not guarantee message delivery, ordering, or duplicate protection?", options: ["TCP", "UDP", "SCTP", "ICMP"], answer: "UDP" },
+    { question: "What is the size of the TCP header without any options?", options: ["16 bytes", "20 bytes", "32 bytes", "24 bytes"], answer: "20 bytes" }
   ],
   prog: [
     { question: "Which language is used for web development?", options: ["Python", "HTML", "C++", "Java"], answer: "HTML" },
