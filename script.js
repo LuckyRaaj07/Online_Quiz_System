@@ -156,3 +156,42 @@ function endQuiz() {
   renderResults();
   renderRanking(userRecord);
 }
+
+function renderResults() {
+  const table = document.getElementById("results-table");
+  table.innerHTML = `<tr><th>Name</th><th>Reg No</th><th>Email</th><th>Contact</th><th>Score</th><th>Action</th></tr>`;
+  users.forEach((user, index) => {
+    const row = `<tr>
+      <td>${user.name}</td>
+      <td>${user.regno}</td>
+      <td>${user.email}</td>
+      <td>${user.contact}</td>
+      <td>${user.score}</td>
+      <td><button class="delete-btn" onclick="deleteRecord(${index})">Delete</button></td>
+    </tr>`;
+    table.innerHTML += row;
+  });
+}
+
+function renderRanking(currentUser) {
+  const sorted = [...users].sort((a, b) => b.score - a.score);
+  const rank = sorted.findIndex(u => u.regno === currentUser.regno) + 1;
+  document.getElementById("rank-display").textContent = `Your rank: ${rank}`;
+
+  const table = document.getElementById("ranking-table");
+  table.innerHTML = `<tr><th>Rank</th><th>Name</th><th>Score</th></tr>`;
+  sorted.forEach((user, index) => {
+    table.innerHTML += `<tr><td>${index + 1}</td><td>${user.name}</td><td>${user.score}</td></tr>`;
+  });
+}
+
+function deleteRecord(index) {
+  users.splice(index, 1);
+  localStorage.setItem("quizUsers", JSON.stringify(users));
+  renderResults();
+  renderRanking({ regno: userData.regno });
+}
+
+function restartQuiz() {
+  location.reload();
+}
