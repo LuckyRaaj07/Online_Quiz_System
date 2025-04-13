@@ -4,6 +4,47 @@ let selectedTopic = "";
 let userData = {};
 let answers = [];
 let users = JSON.parse(localStorage.getItem("quizUsers")) || [];
+let timerInterval;
+let timeLeft = 600; // 10 minutes in seconds
+
+// updation
+
+function startQuiz() {
+  // Hide start screen
+  document.getElementById('start-quiz-section').classList.add('hidden');
+  // Show quiz section
+  document.getElementById('quiz-section').classList.remove('hidden');
+
+  // Optionally call your quiz init logic here
+  initializeQuiz(); // if you have a function for that
+}
+
+// Dummy quiz init function (replace with real one if needed)
+function initializeQuiz() {
+  console.log("Quiz started");
+  // load first question, start timer etc.
+}
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timer");
+  
+  timerInterval = setInterval(() => {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      alert("Time's up!");
+      endQuiz(); // Make sure this function submits the quiz
+    }
+  }, 1000);
+}
+
+
+// updation
 
 const quizData = {
   os: [
@@ -94,6 +135,7 @@ function startQuiz() {
 
   document.getElementById("topic-selection").classList.add("hidden");
   document.getElementById("quiz").classList.remove("hidden");
+  startTimer();
   showQuestion();
 }
 
