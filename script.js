@@ -44,7 +44,15 @@ const quizData = {
   ],
   prog: [
     { question: "Which language is used for web development?", options: ["Python", "HTML", "C++", "Java"], answer: "HTML" },
-    { question: "What is 5 + 3?", options: ["6", "8", "9", "10"], answer: "8" }
+    { question: "In C++, which of the following is true about virtual functions?", options: ["They must be defined in the derived class", "They can't be private", "They support run-time polymorphism", "They are resolved at compile-time"], answer: "They support run-time polymorphism" },
+    { question: "What is the time complexity of inserting an element into a Binary Search Tree (BST) on average and in the worst case?", options: ["Average: O(log n), Worst: O(log n)", "Average: O(n), Worst: O(n)", "Average: O(log n), Worst: O(n)", "Average: O(n), Worst: O(log n)"], answer: "Average: O(log n), Worst: O(n)" },
+    { question: "Which Java concept allows multiple methods to have the same name but different parameters?", options: ["Method Overriding", "Method Overloading", "Polymorphism", "Inheritance"], answer: "Method Overloading" },
+    { question: "Which data structure is best suited for implementing a priority queue?", options: ["Stack", "Queue", "Heap", "Linked List"], answer: "Heap" },
+    { question: "Which of the following is a valid way to reverse a string in Python?", options: ["str[::-1]", "reverse(str)", "str.reverse()", "str.reverse(str)"], answer: "str[::-1]" },
+    { question: "Which of the following sorting algorithms has the worst-case time complexity of O(n log n)?", options: ["Quick Sort", "Merge Sort", "Bubble Sort", "Insertion Sort"], answer: "Merge Sort" },
+    { question: "Which data structure uses LIFO (Last In First Out)?", options: ["Queue", "Stack", "Array", "Linked List"], answer: "Stack" },
+    { question: "Which keyword is used in Python to define a function?", options: ["function", "def", "define", "func"], answer: "def" },
+    { question: "Which of the following is true about dynamic memory allocation in C?", options: ["malloc returns a pointer to an int", "malloc initializes memory to zero", "malloc returns a void pointer", "malloc allocates memory for strings only"], answer: "malloc returns a void pointer" }
   ],
   oops: [
     { question: "OOP stands for?", options: ["Object-Oriented Programming", "Optical Output Programming", "Object Operated Program", "None"], answer: "Object-Oriented Programming" },
